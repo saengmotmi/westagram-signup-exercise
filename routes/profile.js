@@ -2,7 +2,6 @@ const { getUsersSnapshot } = require("../firebase/db");
 const { checkFormValid, verifyToken } = require("../auth");
 
 module.exports = async (req, res) => {
-  const { id, password } = req.body;
   const { authorization } = req.headers;
 
   if (!authorization) res.status(400).json({ message: "token is required" });
