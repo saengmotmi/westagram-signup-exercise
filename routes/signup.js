@@ -30,5 +30,7 @@ module.exports = async (req, res) => {
 
   await update(ref(db, "users/" + id), userInfo);
 
-  res.status(200).json({ token: generateToken(primaryKey) });
+  res
+    .status(200)
+    .json({ message: "signup success", token: generateToken(primaryKey) });
 };

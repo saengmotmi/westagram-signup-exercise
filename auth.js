@@ -8,8 +8,8 @@ const generateHash = async (password) => {
   return bcrypt.hash(password, saltRounds);
 };
 
-const verifyHash = async (plainText, hash) => {
-  return bcrypt.compare(plainText, hash);
+const verifyHash = (plainText, hash) => {
+  return bcrypt.compareSync(plainText, hash);
 };
 
 const generateToken = (data) => {
